@@ -192,10 +192,6 @@ contract Governance {
     function transferNodeOwnershipByFoundation(address OldOwner, address NewOwner) public {
     }
 
-    // replaceNodePublicKey(newPublicKey)
-    function replaceNodePublicKey(bytes memory NewPublicKey) public {
-    }
-
     // Return number of nodes.
     function nodesLength() view public returns (uint256) {
     }
@@ -228,6 +224,15 @@ contract Governance {
     function register(bytes memory PublicKey, string memory Name,
                       string memory Email, string memory Location,
                       string memory Url) public payable {
+    }
+
+    // ReplaceNodePublicKey(newPublicKey)
+    function replaceNodePublicKey(bytes memory NewPublicKey) public {
+    }
+
+    // UpdateNodeInfo(name, email, location, url)
+    function updateNodeInfo(string memory Name, string memory Email,
+                            string memory Location, string memory Url) public {
     }
 
     // Stake()
