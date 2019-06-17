@@ -28,7 +28,7 @@ contract Recovery is Ownable {
         emit VotedForRecovery(height, msg.sender);
     }
 
-    function numVotes(uint256 height) public returns (uint256) {
+    function numVotes(uint256 height) public view returns (uint256) {
         return votes[height].length;
     }
 }
