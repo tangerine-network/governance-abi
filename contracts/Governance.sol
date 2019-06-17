@@ -164,6 +164,10 @@ contract Governance {
     event FinePaid(address indexed NodeAddress, uint256 Amount);
     event DKGReset(uint256 indexed Round, uint256 BlockHeight);
 
+    // ---------
+    // Protocol.
+    // ---------
+
     // transferOwnership(newOwner)
     function transferOwnership(address NewOwner) public onlyOwner {
     }
@@ -182,22 +186,6 @@ contract Governance {
         uint256 MinBlockInterval,
         uint256[] memory FineValues)
         public onlyOwner {
-    }
-
-    // transferNodeOwnership(newOwner)
-    function transferNodeOwnership(address NewOwner) public {
-    }
-
-    // transferNodeOwnershipByFoundation(oldOwner, newOwner)
-    function transferNodeOwnershipByFoundation(address OldOwner, address NewOwner) public {
-    }
-
-    // Return number of nodes.
-    function nodesLength() view public returns (uint256) {
-    }
-
-    // ProposeCRS(round, signedCRS)
-    function proposeCRS(uint256 Round, bytes memory SignedCRS) public {
     }
 
     // AddDKGComplaint(complaint)
@@ -220,6 +208,31 @@ contract Governance {
     function addDKGSuccess(bytes memory Success) public {
     }
 
+    // PayFine(node)
+    function payFine(address NodeAddress) public payable {
+    }
+
+    // Return number of nodes.
+    function nodesLength() view public returns (uint256) {
+    }
+
+    // ProposeCRS(round, signedCRS)
+    function proposeCRS(uint256 Round, bytes memory SignedCRS) public {
+    }
+
+    // Report(enum type, bytes[] payloads)
+    function report(uint256 Type, bytes memory Arg1, bytes memory Arg2) public {
+    }
+
+    // ResetDKG(newSignedCRS)
+    function resetDKG(bytes memory NewSignedCRS) public {
+    }
+
+
+    // ------------------------
+    // Node Related operations.
+    // ------------------------
+
     // Register(public_key, name, email, location, url)
     function register(bytes memory PublicKey, string memory Name,
                       string memory Email, string memory Location,
@@ -230,17 +243,25 @@ contract Governance {
     function replaceNodePublicKey(bytes memory NewPublicKey) public {
     }
 
-    // UpdateNodeInfo(name, email, location, url)
-    function updateNodeInfo(string memory Name, string memory Email,
-                            string memory Location, string memory Url) public {
-    }
-
     // Stake()
     function stake() public payable {
     }
 
+    // transferNodeOwnership(newOwner)
+    function transferNodeOwnership(address NewOwner) public {
+    }
+
+    // transferNodeOwnershipByFoundation(oldOwner, newOwner)
+    function transferNodeOwnershipByFoundation(address OldOwner, address NewOwner) public {
+    }
+
     // Unstake()
     function unstake(uint256 Amount) public {
+    }
+
+    // UpdateNodeInfo(name, email, location, url)
+    function updateNodeInfo(string memory Name, string memory Email,
+                            string memory Location, string memory Url) public {
     }
 
     // Withdraw()
@@ -249,17 +270,5 @@ contract Governance {
 
     // Withdrawable()
     function withdrawable() public view returns (bool) {
-    }
-
-    // PayFine(node)
-    function payFine(address NodeAddress) public payable {
-    }
-
-    // Report(enum type, bytes[] payloads)
-    function report(uint256 Type, bytes memory Arg1, bytes memory Arg2) public {
-    }
-
-    // ResetDKG(newSignedCRS)
-    function resetDKG(bytes memory NewSignedCRS) public {
     }
 }
